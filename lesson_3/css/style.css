@@ -1,0 +1,118 @@
+/* Reset basic css styles */
+
+@import url('reset.css');
+
+/* Main styles */
+
+* {
+    color: #4dc49c;
+}
+
+
+div {
+    color: #3c237e;
+}
+
+h2 {
+    color: #008b8b;
+}
+
+h3 {
+    /* Цього кольору немає на сторінці. Перевизначено в обох місцях */
+    color: #6495ed;
+}
+
+h4 {
+    color: #ff4800;
+}
+
+h5 {
+    color: #ee240085;
+}
+
+p {
+    color: #00ffff;
+}
+
+[class*="default"] {
+    color: #ee8f00;
+}
+
+.header * {
+    color: #1e9131;
+}
+
+.header__sign-in.sign-in a {
+    color: #7c7a7a;
+}
+
+#join-in-header,
+.topics-price * {
+    color: #000000;
+}
+
+.sign-in__sign {
+    color: #8b008b;
+}
+
+.contents__list li a {
+    color: #00be20;
+}
+
+.contents__list .contents__contact-us {
+    color: #eb6565;
+}
+
+.topics__heading h3 {
+    /* Перевизначено нижче */
+    color: #ff0000;
+}
+
+#popular-topics h3 {
+    color: #0000ff;
+}
+
+.topics-sign p {
+    color: #c11ecf;
+}
+
+.topics-sign h4+p {
+    color: #3ccf1e;
+}
+
+.topics-cant-sign li {
+    color: #d3d3d3;
+}
+
+.topics-cant-sign ul~p {
+    color: #c8ff00;
+}
+
+h4.topics-cant-sign__heading {
+    color: #0000ffbd;
+}
+
+.top-questions__item li {
+    color: #7fff00;
+}
+
+.top-questions__item li>p {
+    color: #608a3f;
+}
+
+.top-questions__item div>p {
+    color: #8a3f3f;
+}
+
+.language__list li {
+    color: #8b6e6e;
+}
+
+.info__example li {
+    color: #ac070762;
+}
+
+/* Don`t go crazy XD */
+.info__example li+li+li+li {
+    color: #fd000036;
+}
