@@ -9,13 +9,7 @@ body {
 }
 
 .main__text-container {
-    width: 846px;
-    padding: 0 15px;
-    margin: 0 auto 80px;
-}
-
-.main__image-container {
-    width: 1270px;
+    max-width: 846px;
     padding: 0 15px;
     margin: 0 auto 80px;
 }
@@ -35,12 +29,18 @@ body {
     margin-bottom: 35px;
 }
 
+.main__image-container {
+    max-width: 1270px;
+    padding: 0 15px;
+    margin: 0 auto 80px;
+}
+
 .group-images__image {
     display: inline-block;
     margin-right: -2.2px;
 }
 
-.main__group-images div+div {
+.group-images__content div+div {
     margin-left: 30px;
 }
 
@@ -51,7 +51,7 @@ body {
 /* Training section */
 
 .training {
-    width: 1270px;
+    max-width: 1270px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -102,7 +102,7 @@ body {
 }
 
 .wide-photo {
-    height: 96.77px;
+    max-height: 96.77px;
 }
 
 .training__end {
