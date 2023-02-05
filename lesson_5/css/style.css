@@ -8,6 +8,10 @@ body {
     color: #6C757D;
 }
 
+.main {
+    margin-bottom: 65px;
+}
+
 .main__text-container {
     max-width: 846px;
     padding: 0 15px;
@@ -45,7 +49,7 @@ body {
 }
 
 .last-text-container {
-    margin-bottom: 65px;
+    margin-bottom: 0;
 }
 
 /* Training section */
@@ -79,6 +83,10 @@ body {
     margin-bottom: 40px;
 }
 
+.article-preview a {
+    display: inline-block;
+}
+
 .article-preview__image,
 .article-preview__text {
     display: inline-block;
@@ -91,7 +99,6 @@ body {
 
 .article-preview__image img {
     width: 300px;
-    margin-bottom: 10px;
 }
 
 .article-preview__text {
