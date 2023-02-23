@@ -1,0 +1,134 @@
+/* Reset styles */
+
+@import url('reset.css');
+
+/* Main styles */
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+[class*='__container'] {
+    max-width: 1200px;
+    padding: 50px 15px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #86c552;
+}
+
+.header__images:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+
+.images-item {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.main {
+    background: #ece6ad;
+}
+
+.main__image img {
+    width: 100%;
+}
+
+.customers {
+    max-width: 270px;
+    border-radius: 15px;
+}
+
+.projects {
+    max-width: 370px;
+    border-radius: 10px;
+}
+
+.team {
+    max-width: 270px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.profile-photo {
+    max-width: 165px;
+    max-height: 165px;
+    border-radius: 50%;
+}
+
+.news {
+    max-width: 370px;
+    border-radius: 5px;
+}
+
+.footer {
+    background: #4f8027;
+}
+
+.footer__images>.images-item:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+.blot::before {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 220px;
+    background: url('../img/design/blot-2.svg') no-repeat;
+    margin-right: 10px;
+}
+
+.blot::after {
+    content: '';
+    display: inline-block;
+    width: 115px;
+    height: 186px;
+    background: url('../img/design/blot-1.svg') no-repeat;
+}
+
+.dotted-blue::after {
+    content: '';
+    display: inline-block;
+    width: 135px;
+    height: 106px;
+    background: url('../img/design/dotted-blue.svg') no-repeat;
+}
+
+.dotted-green::before {
+    content: '';
+    display: inline-block;
+    width: 77px;
+    height: 77px;
+    background: url('../img/design/dotted-green.svg') no-repeat;
+}
+
+.dotted-white::before {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 48px;
+    background: url('../img/design/dotted-white.svg') no-repeat;
+}
+
+.green-blue-lines::before {
+    content: '';
+    display: inline-block;
+    width: 173px;
+    height: 191px;
+    background: url('../img/design/green-blue-lines.svg') no-repeat;
+}
+
+.shape::after {
+    content: '';
+    display: inline-block;
+    width: 58px;
+    height: 60px;
+    background: url('../img/design/shape.svg') no-repeat;
+}
