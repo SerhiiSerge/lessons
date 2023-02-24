@@ -33,6 +33,24 @@ h3 {
     overflow: hidden;
 }
 
+.arrow-right {
+    width: 20px;
+    height: 20px;
+    background: url('../img/icons/arrow-right.svg') no-repeat;
+}
+
+.mail-small {
+    width: 18px;
+    height: 13px;
+    background: url('../img/icons/mail-small.svg') no-repeat;
+}
+
+.phone-small {
+    width: 20px;
+    height: 20px;
+    background: url('../img/icons/phone-small.svg') no-repeat;
+}
+
 .main {
     background: #ece6ad;
 }
