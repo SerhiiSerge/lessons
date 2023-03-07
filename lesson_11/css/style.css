@@ -225,13 +225,6 @@ header {
     margin-bottom: 20px;
 }
 
-.column-promo {
-    width: 220px;
-    height: 248px;
-    border-radius: 4px;
-    background: rgba(205, 131, 90, 0.65);
-}
-
 .column-promo__text-block {
     position: absolute;
     top: 70px;
@@ -240,6 +233,7 @@ header {
     line-height: 1.2;
     color: #FFFFFF;
     text-align: center;
+    z-index: 2;
 }
 
 .column-promo__text-block h2 {
@@ -268,6 +262,16 @@ header {
     width: 220px;
     height: 248px;
     border-radius: 4px;
+}
+
+.column-promo__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 248px;
+    border-radius: 4px;
+    background: rgba(205, 131, 90, 0.65);
 }
 
 .drop-block__item:hover .drop-block__link {
