@@ -24,6 +24,19 @@
     background: #00424b linear-gradient(40deg, #ffffff57 0%, #7db9e800 100%);
 }
 
+.buttons__plate {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 180px;
+    padding: 15px;
+    text-transform: capitalize;
+    color: #ffffffe5;
+    background: #000000ef;
+    border: 1px solid #ffffffe5;
+    outline: 5px solid #000000ef;
+}
+
 .buttons__button:last-child {
     margin-right: 0;
 }
@@ -43,22 +56,6 @@
     transform: translateY(-8px);
     transition: all 0.3s ease 0s;
     cursor: pointer;
-}
-
-.buttons__plate {
-    position: absolute;
-    top: 75px;
-    left: 0;
-    width: 180px;
-    padding: 5px;
-    background: #000000ef;
-}
-
-.plate__text {
-    padding: 15px;
-    border: 1px solid #ffffffe5;
-    text-transform: capitalize;
-    color: #ffffffe5;
 }
 
 .buttons__button:active .buttons__text {
