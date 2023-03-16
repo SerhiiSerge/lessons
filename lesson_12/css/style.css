@@ -22,7 +22,6 @@
     outline: 25px solid #8b8a8d;
     border-radius: 10px;
     background: #00424b linear-gradient(40deg, #ffffff57 0%, #7db9e800 100%);
-    cursor: pointer;
 }
 
 .buttons__button:last-child {
@@ -42,6 +41,8 @@
     border-radius: 10px;
     background: #3d7280 linear-gradient(40deg, #ffffff73 15%, #7db9e800 100%);
     transform: translateY(-8px);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
 }
 
 .buttons__plate {
@@ -51,7 +52,6 @@
     width: 180px;
     padding: 5px;
     background: #000000ef;
-
 }
 
 .plate__text {
