@@ -13,7 +13,7 @@
     min-height: 100%;
 }
 
-.buttons__button {
+.button {
     position: relative;
     display: inline-block;
     width: 180px;
@@ -24,7 +24,7 @@
     background: #00424b linear-gradient(40deg, #ffffff57 0%, #7db9e800 100%);
 }
 
-.buttons__plate {
+.button__plate {
     position: absolute;
     top: 78px;
     left: 0;
@@ -37,11 +37,11 @@
     outline: 5px solid #000000ef;
 }
 
-.buttons__button:last-child {
+.button:last-child {
     margin-right: 0;
 }
 
-.buttons__text {
+.button__text {
     display: inline-block;
     width: 180px;
     font-family: sans-serif;
@@ -58,43 +58,43 @@
     cursor: pointer;
 }
 
-.buttons__button:active .buttons__text {
+.button:active .button__text {
     transform: translateY(-4px);
     color: #73ff00;
     background: #3d7280 linear-gradient(40deg, #ffffff00 0%, #ffffff73 100%);
 
 }
 
-.buttons__button_translate:active+div+div+div+div+div+div+.car>.car__wrapper {
+.button_translate:active+div+div+div+div+div+div+.car>.car__wrapper {
     transform: translate(-20px, 20px);
 }
 
-.buttons__button_scale:active+div+div+div+div+div+.car>.car__wrapper {
+.button_scale:active+div+div+div+div+div+.car>.car__wrapper {
     transform: scale(0.9);
 }
 
-.buttons__button_rotate:active+div+div+div+div+.car>.car__wrapper {
+.button_rotate:active+div+div+div+div+.car>.car__wrapper {
     transform-origin: 0% 100%;
     transform: scale(0.2) rotate(95deg);
 }
 
-.buttons__button_skew:active+div+div+div+.car>.car__wrapper {
+.button_skew:active+div+div+div+.car>.car__wrapper {
     transform: skew(5deg, 5deg);
 }
 
-.buttons__button_matrix:active+div+div+.car>.car__wrapper {
+.button_matrix:active+div+div+.car>.car__wrapper {
     transform: matrix(0.5, 0.1, 0.5, 1, 100, 5);
 }
 
-.buttons__button_perspective:active+div+.car>.car__wrapper {
+.button_perspective:active+div+.car>.car__wrapper {
     transform: rotate3D(0.5, 5, 1, 5deg);
 }
 
-.buttons__button_backface:active+.car>.car__wrapper_backface {
+.button_backface:active+.car>.car__wrapper_backface {
     visibility: visible;
 }
 
-.buttons__button_backface:active+.car {
+.button_backface:active+.car {
     transform: rotateY(180deg);
 }
 
