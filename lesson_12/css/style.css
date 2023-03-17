@@ -4,13 +4,7 @@
 /* Main styles */
 
 [class*='__container'] {
-    margin: 0 auto;
     padding: 80px;
-}
-
-.wrapper {
-    overflow: clip;
-    min-height: 100%;
 }
 
 .button {
