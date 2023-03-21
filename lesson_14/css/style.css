@@ -152,7 +152,7 @@ main {
 }
 
 .card__link-image img {
-    width: 100%;
+    max-width: 100%;
     background: #C4C4C4;
     transition: transform 0.5s;
 }
