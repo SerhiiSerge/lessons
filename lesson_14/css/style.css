@@ -33,15 +33,15 @@ main {
     padding: 100px 15px;
 }
 
+.articles__header:not(:last-child) {
+    margin-bottom: 44px;
+}
+
 .header-articles {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     font-weight: 500;
-}
-
-.header-articles:not(:last-child) {
-    margin-bottom: 44px;
 }
 
 .header-articles__categories {
