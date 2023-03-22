@@ -1,0 +1,144 @@
+@import url('reset.css');
+@import url('common.css');
+
+/* Main styles */
+
+.article-header__image img,
+.gallery__image img,
+.benefit__image img {
+    width: 100%;
+    max-height: 513px;
+    object-fit: cover;
+}
+
+/* Article header */
+
+.main__article-header:not(:last-child) {
+    margin-bottom: 100px;
+}
+
+.article-header__container>*:not(:last-child) {
+    margin-bottom: 53px;
+}
+
+.article-header__heading>*:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.article-header__standfirst>*:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+/* Body article */
+
+.main__body-article:not(:last-child) {
+    margin-bottom: 81px;
+}
+
+.body-article__content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin: 0 -15px;
+}
+
+.content__column {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+.column__title:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.column__body:not(:last-child),
+.column__body>*:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.column__info {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    row-gap: 10px;
+}
+
+.column__info:last-child {
+    padding-top: 30px;
+}
+
+.column__info:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.column__category {
+    text-transform: capitalize;
+    transition: color 0.3s;
+}
+
+.column__category:hover {
+    color: #333333;
+}
+
+.column__category:active {
+    color: inherit;
+}
+
+/* Gallery */
+
+.main__gallery:not(:last-child) {
+    margin-bottom: 100px;
+}
+
+.gallery__images {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin: 0 -15px;
+}
+
+.gallery__item {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+.gallery__item_wide {
+    flex: 0 0 100%;
+    padding: 0 15px;
+}
+
+/* Achievement */
+
+.main__achievement:not(:last-child) {
+    margin-bottom: 100px;
+}
+
+.achievement__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.achievement__benefit {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.benefit__image {
+    flex: 0 0 62.16%;
+}
+
+.benefit__image img {
+    max-height: 365px;
+}
+
+.benefit__body {
+    align-self: center;
+    flex: 0 0 37.83%;
+    padding-left: 120px;
+}
+
+.benefit__body>*:not(:last-child),
+.benefit__text>*:not(:last-child) {
+    margin-bottom: 20px;
+}
