@@ -55,11 +55,11 @@ select {
 
 /* Shipping form */
 
-.shipping__body {
+.shipping {
     flex: 0 0 50.35%;
 }
 
-.shipping__body:not(:last-child) {
+.shipping:not(:last-child) {
     padding-right: 104px;
 }
 
@@ -304,7 +304,7 @@ select {
 
 /* Billing form */
 
-.billing__body {
+.billing {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     line-height: 1.5;
