@@ -733,6 +733,7 @@ select {
 .training__file {
     max-width: 102px;
     min-height: 30px;
+    margin-left: 5px;
 }
 
 .training__file::-webkit-file-upload-button {
