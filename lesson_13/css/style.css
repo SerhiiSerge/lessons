@@ -539,10 +539,6 @@ h1 {
     transition: transform 3s;
 }
 
-.wheel-block__round-wrapper:hover {
-    transform: rotate(-130deg);
-}
-
 .wheel-block__wheel {
     position: absolute;
     top: 22px;
