@@ -65,11 +65,10 @@
                                 <div class="shipping__line">
                                     <label for="address" class="shipping__label">Street Address
                                         <span>*</span></label>
-                                    <div class="shipping__inputs">
-                                        <input required id="address" name="address1" type="text"
-                                            class="shipping__column-input">
-                                        <input name="address2" type="text" class="shipping__column-input">
-                                        <input name="address3" type="text" class="shipping__column-input">
+                                    <div class="shipping__inputs inputs">
+                                        <input required id="address" name="address1" type="text" class="inputs__input">
+                                        <input name="address2" type="text" class="inputs__input">
+                                        <input name="address3" type="text" class="inputs__input">
                                     </div>
                                 </div>
                                 <div class="shipping__line">
@@ -93,29 +92,29 @@
                                 </div>
                             </div>
                             <h3 class="shipping__title">Shipping Methods</h3>
-                            <div class="shipping__line shipping__line_border-top">
-                                <div class="shipping__radio">
-                                    <div class="shipping__item-radio">
-                                        <div class="shipping__main-radio">
-                                            <input id="price-01" checked name="price" type="radio" value="fixed"
-                                                class="shipping__input-radio">
-                                            <label for="price-01" class="shipping__label-radio">$5.00</label>
-                                        </div>
-                                        <ul class="shipping__comparison-radio">
-                                            <li>Fixed</li>
-                                            <li>Flat Rate</li>
-                                        </ul>
+                            <div class="shipping__radio radio">
+                                <div class="radio__items">
+                                    <div class="radio__item">
+                                        <input id="price-01" checked name="price" type="radio" value="fixed"
+                                            class="radio__input">
+                                        <label for="price-01" class="radio__label">
+                                            <div class="radio__price">$5.00</div>
+                                            <div class="radio__comparison">
+                                                <span>Fixed</span>
+                                                <span>Flat Rate</span>
+                                            </div>
+                                        </label>
                                     </div>
-                                    <div class="shipping__item-radio">
-                                        <div class="shipping__main-radio">
-                                            <input id="price-02" name="price" type="radio" value="table_rate"
-                                                class="shipping__input-radio">
-                                            <label for="price-02" class="shipping__label-radio">$10.00</label>
-                                        </div>
-                                        <ul class="shipping__comparison-radio">
-                                            <li>Table Rate</li>
-                                            <li>Best Way</li>
-                                        </ul>
+                                    <div class="radio__item">
+                                        <input id="price-02" name="price" type="radio" value="tablerate"
+                                            class="radio__input">
+                                        <label for="price-02" class="radio__label">
+                                            <div class="radio__price">$10.00</div>
+                                            <div class="radio__comparison">
+                                                <span>Table Rate</span>
+                                                <span>Best Way</span>
+                                            </div>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -157,8 +156,8 @@
                                         <option value="pl">Poland</option>
                                         <option value="es">Spain</option>
                                         <option value="ua">Ukraine</option>
-                                        <option value="us">USA</option>
                                         <option value="gb">United Kingdom</option>
+                                        <option value="us">USA</option>
                                     </select>
                                 </div>
                                 <div class="billing__item">
@@ -181,7 +180,7 @@
                                     <input type="tel" minlength="6" required placeholder="Phone*" name="phone2"
                                         class="billing__input">
                                 </div>
-                                <div class="billing__message">
+                                <div class="billing__item billing__item_wide">
                                     <textarea placeholder="Additional information" name="addinfo"
                                         class="billing__textarea"></textarea>
                                 </div>
@@ -196,13 +195,12 @@
                                     Ship to a different address?
                                 </label>
                             </div>
-                        </form>
-                        <form action="#" method="post" class="billing__coupon coupon">
-                            <h4 class="coupon__title">Apply Coupon to get discount!</h4>
-                            <div class="coupon__row">
-                                <input type="text" required name="coupon" placeholder="Coupon code"
-                                    class="coupon__input">
-                                <button type="submit" class="coupon__button">Apply Code</button>
+                            <div class="billing__coupon coupon">
+                                <h4 class="coupon__title">Apply Coupon to get discount!</h4>
+                                <div class="coupon__row">
+                                    <input type="text" name="coupon" placeholder="Coupon code" class="coupon__input">
+                                    <button type="button" class="coupon__button">Apply Code</button>
+                                </div>
                             </div>
                         </form>
                     </div>
