@@ -501,7 +501,7 @@ select {
     position: relative;
     width: 50px;
     height: 30px;
-    margin-left: 81px;
+    margin-left: 86px;
     background-color: #383838;
     border: 2px solid #131313;
     border-radius: 20px;
@@ -523,7 +523,7 @@ select {
 }
 
 .training__checkbox:checked+div+.training__main>.training__items>.training__label>.training__date {
-    background-color: #cacaca;
+    /* background-color: #cacaca; */
 }
 
 .training__checkbox:checked+div+.training__main>.training__items>.training__age {
@@ -563,11 +563,6 @@ select {
     background-color: #131416;
 }
 
-.training__checkbox:checked+div+.training__main>.label-checkbox::before {
-    left: 88px;
-    background-color: #fff3af;
-}
-
 .training__toggle-block {
     position: absolute;
     top: 0;
@@ -597,12 +592,17 @@ select {
     content: '';
     position: absolute;
     top: -53px;
-    left: 69px;
+    left: 74px;
     width: 26px;
     height: 26px;
     border-radius: 50%;
     background-color: #474747;
     transition: background-color 0.2s;
+}
+
+.training__checkbox:checked+div+.training__main>.label-checkbox::before {
+    left: 93px;
+    background-color: #fff3af;
 }
 
 .label-checkbox>span {
@@ -613,7 +613,7 @@ select {
 
 .label-checkbox>span+span {
     position: absolute;
-    left: 122px;
+    left: 130px;
 }
 
 .training__items {
@@ -679,7 +679,7 @@ select {
     padding: 0 5px;
     border: 2px solid #cacaca;
     border-radius: 3px;
-    background-color: #282C34FF;
+    /* background-color: #282C34FF; */
     transition: background-color 0.3s;
 }
 
@@ -687,6 +687,7 @@ select {
     max-width: 126px;
     min-height: 57px;
     padding-left: 15px;
+    padding-left: 8px;
     border: 2px solid #cacaca;
     border-radius: 3px;
     background-color: #282C34FF;
@@ -694,7 +695,8 @@ select {
 }
 
 .training__file {
-    max-width: 102px;
+    /* max-width: 102px; */
+    max-width: 97px;
     min-height: 30px;
     margin-left: 5px;
 }
