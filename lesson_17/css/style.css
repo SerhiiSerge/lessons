@@ -523,7 +523,7 @@ select {
 }
 
 .training__checkbox:checked+div+.training__main>.training__items>.training__label>.training__date {
-    /* background-color: #cacaca; */
+    background-color: #cacaca;
 }
 
 .training__checkbox:checked+div+.training__main>.training__items>.training__age {
@@ -613,7 +613,7 @@ select {
 
 .label-checkbox>span+span {
     position: absolute;
-    left: 130px;
+    left: 129px;
 }
 
 .training__items {
@@ -679,7 +679,7 @@ select {
     padding: 0 5px;
     border: 2px solid #cacaca;
     border-radius: 3px;
-    /* background-color: #282C34FF; */
+    background-color: #282C34FF;
     transition: background-color 0.3s;
 }
 
@@ -687,7 +687,6 @@ select {
     max-width: 126px;
     min-height: 57px;
     padding-left: 15px;
-    padding-left: 8px;
     border: 2px solid #cacaca;
     border-radius: 3px;
     background-color: #282C34FF;
@@ -695,8 +694,7 @@ select {
 }
 
 .training__file {
-    /* max-width: 102px; */
-    max-width: 97px;
+    width: 105px;
     min-height: 30px;
     margin-left: 5px;
 }
