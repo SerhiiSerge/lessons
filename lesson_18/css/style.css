@@ -590,6 +590,32 @@ main {
     }
 }
 
+@media (max-width: 400px) {
+    .slider__container {
+        padding: 0;
+    }
+
+    .slider__body {
+        border-radius: 0;
+    }
+
+    .cards__body {
+        margin: 0 -15px;
+    }
+
+    .cards__card {
+        padding: 0;
+    }
+
+    .card__image {
+        border-radius: 0;
+    }
+
+    .card__body {
+        padding: 0 5px;
+    }
+}
+
 @media (min-width: 540px) {
     .cards__card {
         flex: 0 0 50%;
@@ -952,6 +978,7 @@ main {
 
     .card__body {
         flex: 0 0 52.396%;
+        align-self: stretch;
         min-height: 100%;
         gap: 15px 0;
         padding-left: 30px;
