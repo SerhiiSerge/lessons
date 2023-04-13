@@ -30,12 +30,13 @@ main {
 
 /* Main Categories */
 .categories__container {
-    padding: 50px 15px;
+    padding: 50px 0;
 }
 
 .categories__items {
     display: grid;
-    gap: 15px;
+    grid-auto-rows: 200px;
+    gap: 10px;
 }
 
 .categories__item {
@@ -52,6 +53,7 @@ main {
 .categories__link {
     position: relative;
     z-index: 2;
+    text-shadow: 0px 0px 2px #ffffff;
     font-weight: 600;
 }
 
@@ -67,10 +69,10 @@ main {
 
 .categories__title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.25;
     color: #212B36;
-    max-width: 177px;
+    max-width: 200px;
 }
 
 .categories__image {
@@ -105,15 +107,22 @@ main {
 }
 
 @media (min-width: 390px) {
+    .categories__container {
+        padding: 50px 15px;
+    }
+
+    .categories__items {
+        gap: 15px;
+    }
+
     .categories__title {
-        font-size: 22px;
         max-width: 230px;
     }
 }
 
 @media (min-width: 620px) {
     .categories__items {
-        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        grid-template: repeat(2, minmax(200px, auto)) / repeat(2, 1fr);
     }
 
     .categories__item:first-child {
