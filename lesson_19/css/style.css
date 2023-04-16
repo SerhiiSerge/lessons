@@ -132,7 +132,6 @@ main {
 }
 
 .latest-slider__items {
-    align-self: stretch;
     display: grid;
     grid-template: 1fr / repeat(3, 260px);
     gap: 0 10px;
@@ -257,7 +256,7 @@ main {
     border-right: none;
 }
 
-.tranding__item:nth-last-child(-n+3) {
+.tranding__item_borderless {
     border-bottom: none;
 }
 
@@ -446,6 +445,7 @@ main {
 
     /* Main Latest-slider */
     .latest-slider__items {
+        align-self: stretch;
         grid-template: 1fr / repeat(3, 1fr);
     }
 
