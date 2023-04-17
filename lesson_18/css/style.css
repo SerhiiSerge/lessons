@@ -244,6 +244,7 @@ main {
 .slider__pages::before {
     content: '';
     flex: 0 0 44px;
+    width: 44px;
     height: 1px;
     background-color: #F8F9FA;
 }
@@ -729,7 +730,7 @@ main {
     }
 
     .card__body {
-        padding: 0 5px;
+        padding: 0 15px;
     }
 
     /* Main trending */
