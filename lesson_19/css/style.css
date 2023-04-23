@@ -985,7 +985,7 @@ main {
 /* Main Form */
 .main__form {
     position: fixed;
-    inset: 0 auto auto 0;
+    inset: -100% auto auto 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -1079,51 +1079,25 @@ main {
     gap: 0 15px;
 }
 
-.rating__stars {
+.rating__radio {
     position: absolute;
     inset: 0 auto auto 0;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.rating__label {
-    /* position: relative; */
-    cursor: pointer;
-}
-
-.rating__label .rating__star {
-    /* opacity: 0.5;
-    transition: opacity 0.5s; */
-}
-
-.active-star .rating__star {
+.rating__radio:checked .rating__label .rating__star,
+.rating__radio:checked~.rating__label .rating__star {
     fill: #FFA645;
     stroke: none;
 }
 
-.rating__label:hover .rating__star,
-.rating__label:hover~.rating__label .rating__star,
-.rating__label:checked~.rating__label:hover .rating__star {
-    /* fill: #FFA645;
-    stroke: none;
-    opacity: 1;
-    transition: opacity 0.5s; */
+.rating__label {
+    display: flex;
+    cursor: pointer;
 }
-
-.rating__radio {
-    /* position: absolute;
-    inset: 27.5% auto auto 28.5%; */
-    /* opacity: 0;
-    visibility: hidden; */
-}
-
-.rating__radio:checked .rating__star,
-.rating__radio:checked~.rating__star {
-    /* fill: #FFA645;
-    stroke: none;
-    opacity: 1;
-    transition: opacity 0.5s; */
-}
-
-.rating__star {}
 
 .rating__input {
     width: 100%;
@@ -1410,6 +1384,12 @@ main {
     .rating__close:hover .rating__cross,
     .rating__close:hover .rating__cross::after {
         background-color: #FFFFFF;
+    }
+
+    .rating__label:hover .rating__star,
+    .rating__label:hover~.rating__label .rating__star {
+        fill: #FFA645;
+        stroke: none;
     }
 
     .rating__button:hover {
