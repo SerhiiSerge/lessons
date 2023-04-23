@@ -67,7 +67,8 @@ main {
     width: 74%;
 }
 
-.categories__image {
+.categories__image,
+.categories__image img {
     position: absolute;
     inset: 0 auto auto 0;
     width: 100%;
@@ -75,10 +76,6 @@ main {
 }
 
 .categories__image img {
-    position: absolute;
-    inset: 0 auto auto 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     z-index: -1;
     transition: transform 0.5s;
@@ -1105,10 +1102,6 @@ main {
     padding: 0 25px;
     border: 1px solid #E7E7E7;
     border-radius: 7px;
-}
-
-.rating__comment {
-    flex: 1 0 auto;
 }
 
 .rating__textarea {
