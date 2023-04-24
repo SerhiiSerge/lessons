@@ -1,0 +1,82 @@
+@use "sass:math";
+
+// ====== Reset Styles ====== //
+@import "_reset";
+
+// ====== Patterns ====== //
+@import "_variables";
+@import "_mixins";
+@import "_partials";
+
+// ====== Common ====== //
+@import "_common";
+
+// ====== Font Family ====== //
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap');
+
+/* ====== Main Styles ====== */
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #000000;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.wrapper {
+    overflow: clip;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+[class*=__container] {
+    max-width: 1908px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ====== Main Brands ====== */
+.main {
+    &__brands {}
+}
+
+.brands {
+    &__container {}
+
+    &__content {}
+
+    &__body {
+        border: 2px solid #C4C4C4;
+    }
+
+    &__title {
+        padding: 0 95px;
+        font-size: 24px;
+        line-height: 1.875;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        justify-content: space-evenly;
+
+        @media (min-width: 560px) {
+            grid-template: 141px / repeat(auto-fit, 235px);
+            grid-auto-rows: 141px;
+            gap: 30px 34px;
+            padding: 6px 11px 29px;
+
+        }
+    }
+}
+
+.list {
+    &__item {}
+
+    &__link {}
+}
