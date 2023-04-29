@@ -256,7 +256,12 @@ body [class*=__container] {
           justify-content: flex-end;
 }
 .plates__item_small .item__title {
-  max-width: 76%;
+  max-width: 74.28%;
+}
+@media (min-width: 1600px) and (max-width: 1823px) {
+  .plates__item_small .item__title {
+    max-width: 100%;
+  }
 }
 .plates__item_big {
   grid-row: span 2;
@@ -295,6 +300,11 @@ body [class*=__container] {
     max-width: 100%;
   }
 }
+@media (min-width: 980px) and (max-width: 1439.98px) {
+  .plates__item_big .item__title {
+    font-size: 50px;
+  }
+}
 @media (min-width: 1600px) {
   .plates__item_big .item__title {
     font-size: 96px;
@@ -319,15 +329,8 @@ body [class*=__container] {
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 52%;
-          flex: 0 0 52%;
-}
-@media (min-width: 560px) {
-  .item__body {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 40%;
-            flex: 0 0 40%;
-  }
+      -ms-flex: 0 0 48.28%;
+          flex: 0 0 48.28%;
 }
 .item__title {
   font-weight: 600;
@@ -343,6 +346,11 @@ body [class*=__container] {
 @media (min-width: 768px) {
   .item__title {
     font-size: 34px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1439.98px) {
+  .item__title {
+    font-size: 30px;
   }
 }
 @media (min-width: 1600px) {
@@ -373,6 +381,11 @@ body [class*=__container] {
 @media (min-width: 768px) {
   .item__text {
     font-size: 18px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1439.98px) {
+  .item__text {
+    font-size: 16px;
   }
 }
 @media (min-width: 1600px) {
