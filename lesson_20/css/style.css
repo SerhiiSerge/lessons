@@ -52,6 +52,16 @@ button {
   background-color: inherit;
 }
 
+.sidebar__form, .shop-wear__item, .shop-wear__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 /* ====== General Styles ====== */
 body {
   font-family: "Oswald", sans-serif;
@@ -471,6 +481,7 @@ body [class*=__container] {
   inset: 0 auto auto 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   padding-bottom: 47.388%;
 }
 .item__image img {
@@ -551,4 +562,80 @@ body [class*=__container] {
     color: #ffffff;
     background-color: #000000;
   }
+}
+
+/* ====== Main Shop Wear ====== */
+.shop-wear__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.shop-wear__sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 21.4%;
+          flex: 1 1 21.4%;
+  border-right: 1px solid #C4C4C4;
+}
+.shop-wear__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 78.6%;
+          flex: 1 1 78.6%;
+  padding-left: 30px;
+  gap: 63px 0;
+}
+.shop-wear__items {
+  display: grid;
+  grid-template: minmax(548px, auto)/repeat(4, 1fr);
+  grid-auto-rows: minmax(548px, auto);
+  gap: 48px 26px;
+}
+.shop-wear__item {
+  position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 14px 0;
+  min-height: 100%;
+}
+.shop-wear__image {
+  position: relative;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 130.81%;
+}
+.shop-wear__image img {
+  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shop-wear__discount {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+.shop-wear__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.shop-wear__more {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.sidebar__title {
+  font-size: 24px;
+  line-height: 1.63;
+  text-transform: capitalize;
+}
+.sidebar__item {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.63;
+  text-transform: uppercase;
+  color: #3F3F3F;
 }

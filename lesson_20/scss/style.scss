@@ -394,18 +394,10 @@ body {
     }
 
     &__image {
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 100%;
-        padding-bottom: 47.388%;
+        @include image-wrapper-position ($position: absolute, $padding-bottom: 47.388%);
 
         & img {
-            position: absolute;
-            inset: 0 0 auto auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            @include image-position ($right: 0, $left: auto);
             z-index: -2;
         }
 
@@ -481,4 +473,112 @@ body {
             background-color: #000000;
         }
     }
+}
+
+
+/* ====== Main Shop Wear ====== */
+.main {
+
+    &__shop-wear {}
+}
+
+.shop-wear {
+
+    &__container {
+        display: flex;
+    }
+
+    &__sidebar {
+        flex: 1 1 21.4%;
+        border-right: 1px solid #C4C4C4;
+    }
+
+    &__content {
+        flex: 1 1 78.6%;
+        padding-left: 30px;
+        @extend %display-flex-column;
+        gap: 63px 0;
+    }
+
+    &__items {
+        display: grid;
+        grid-template: minmax(548px, auto) / repeat(4, 1fr);
+        grid-auto-rows: minmax(548px, auto);
+        gap: 48px 26px;
+    }
+
+    &__item {
+        position: relative;
+        @extend %display-flex-column;
+        align-items: flex-start;
+        gap: 14px 0;
+        min-height: 100%;
+    }
+
+    &__image {
+        @include image-wrapper-position ($padding-bottom: 130.81%);
+
+        & img {
+            display: block;
+            @include image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover);
+        }
+    }
+
+    &__discount {
+        position: absolute;
+        inset: 0 auto auto 0;
+    }
+
+    &__body {
+        flex: 1 0 auto;
+    }
+
+    &__category {}
+
+    &__title {}
+
+    &__link {}
+
+    &__price {}
+
+    &__old-price {}
+
+    &__more {
+        align-self: center;
+    }
+
+    &__button {}
+}
+
+.sidebar {
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.63;
+        text-transform: capitalize;
+    }
+
+    &__form {
+        @extend %display-flex-column;
+    }
+
+    &__item {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        line-height: 1.63;
+        text-transform: uppercase;
+        color: #3F3F3F;
+    }
+
+    &__checkbox {}
+}
+
+.price {
+
+    &_new {}
+}
+
+.button {
+
+    &_gray {}
 }

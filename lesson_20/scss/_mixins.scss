@@ -1,0 +1,16 @@
+@mixin image-wrapper-position ($position: relative, $padding-bottom: 0%) {
+    position: $position;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: $padding-bottom;
+}
+
+@mixin image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover) {
+    position: absolute;
+    inset: $top $right $buttom $left;
+    width: 100%;
+    height: 100%;
+    object-fit: $object-fit;
+}
