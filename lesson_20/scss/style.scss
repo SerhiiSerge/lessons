@@ -452,6 +452,10 @@ body {
     &__sidebar {
         flex: 1 1 21.4%;
         border-right: 1px solid $main-border-color;
+
+        &>*:not(:last-child) {
+            margin-bottom: 30px;
+        }
     }
 
     &__content {
@@ -477,18 +481,41 @@ body {
     &__image {
         @include image-wrapper-relative ($padding-bottom: 130.81%);
 
+        @media (any-hover: hover) {
+            &:hover img {
+                transform: scale(1.05);
+                overflow: hidden;
+            }
+        }
+
         &:not(:last-child) {
             margin-bottom: 14px;
         }
 
         & img {
             @include image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover);
+            transition: transform ease-out 0.3s;
         }
     }
 
     &__discount {
         position: absolute;
-        inset: 0 auto auto 0;
+        inset: 15px auto auto 0;
+        padding: 0 5px;
+        font-size: 14px;
+        color: $main-white-color;
+        background-color: $main-black-color;
+        transition: background-color ease-out 0.2s;
+
+        &:active {
+            background-color: $red-color;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $red-color;
+            }
+        }
     }
 
     &__body {
@@ -504,6 +531,17 @@ body {
         font-size: 12px;
         text-transform: uppercase;
         color: #BDBDBD;
+        transition: color ease-out 0.2s;
+
+        &:active {
+            color: $secondary-font-color;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $secondary-font-color;
+            }
+        }
     }
 
     &__title {
@@ -511,7 +549,19 @@ body {
         font-size: 18px;
     }
 
-    &__link {}
+    &__link {
+        transition: color ease-out 0.2s;
+
+        &:active {
+            color: $secondary-font-color;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $secondary-font-color;
+            }
+        }
+    }
 
     &__price {
         font-weight: 500;
@@ -548,14 +598,60 @@ body {
 
     &__form {
         @extend %display-flex-column;
+        align-items: flex-start;
+        gap: 20px 0;
     }
 
-    &__item {
+    &__row {
+        display: flex;
+        align-items: baseline;
+        gap: 9px;
+    }
+
+    &__checkbox {
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+        min-width: 10px;
+        min-height: 10px;
+        border: 1px solid $secondary-font-color;
+        transition: all ease-out 0.2s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border: 1px solid $dark-gray;
+            }
+        }
+
+        &:checked {
+            background-color: $main-black-color;
+            border: 1px solid $main-black-color;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 1px auto auto 0;
+            min-width: 8px;
+            min-height: 6px;
+            opacity: 0;
+            background: url('../img/icons/checkmark.svg') no-repeat;
+        }
+
+        &:checked::before {
+            opacity: 1;
+        }
+
+        &:checked+.sidebar__label {
+            color: $main-black-color;
+        }
+    }
+
+    &__label {
         font-family: 'Roboto', sans-serif;
         font-size: 14px;
         text-transform: uppercase;
-        color: #3F3F3F;
+        color: $dark-gray;
+        cursor: pointer;
     }
-
-    &__checkbox {}
 }

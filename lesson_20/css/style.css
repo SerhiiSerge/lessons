@@ -123,13 +123,13 @@ button {
   border: 2px solid #C4C4C4;
 }
 .button_gray:active {
-  color: #3f3f3f;
+  color: #3F3F3F;
   background-color: #ffffff;
   border: 2px solid #828282;
 }
 @media (any-hover: hover) {
   .button_gray:hover {
-    color: #3f3f3f;
+    color: #3F3F3F;
     background-color: #ffffff;
     border: 2px solid #828282;
   }
@@ -604,6 +604,9 @@ body [class*=__container] {
           flex: 1 1 21.4%;
   border-right: 1px solid #C4C4C4;
 }
+.shop-wear__sidebar > *:not(:last-child) {
+  margin-bottom: 30px;
+}
 .shop-wear__content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 78.6%;
@@ -626,6 +629,14 @@ body [class*=__container] {
   overflow: hidden;
   padding-bottom: 130.81%;
 }
+@media (any-hover: hover) {
+  .shop-wear__image:hover img {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    overflow: hidden;
+  }
+}
 .shop-wear__image:not(:last-child) {
   margin-bottom: 14px;
 }
@@ -636,10 +647,30 @@ body [class*=__container] {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: -webkit-transform ease-out 0.3s;
+  transition: -webkit-transform ease-out 0.3s;
+  -o-transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
 .shop-wear__discount {
   position: absolute;
-  inset: 0 auto auto 0;
+  inset: 15px auto auto 0;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #000000;
+  -webkit-transition: background-color ease-out 0.2s;
+  -o-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+}
+.shop-wear__discount:active {
+  background-color: #EB5757;
+}
+@media (any-hover: hover) {
+  .shop-wear__discount:hover {
+    background-color: #EB5757;
+  }
 }
 .shop-wear__body {
   -webkit-box-flex: 1;
@@ -654,10 +685,34 @@ body [class*=__container] {
   font-size: 12px;
   text-transform: uppercase;
   color: #BDBDBD;
+  -webkit-transition: color ease-out 0.2s;
+  -o-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
+}
+.shop-wear__category:active {
+  color: #828282;
+}
+@media (any-hover: hover) {
+  .shop-wear__category:hover {
+    color: #828282;
+  }
 }
 .shop-wear__title {
   font-weight: 300;
   font-size: 18px;
+}
+.shop-wear__link {
+  -webkit-transition: color ease-out 0.2s;
+  -o-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
+}
+.shop-wear__link:active {
+  color: #828282;
+}
+@media (any-hover: hover) {
+  .shop-wear__link:hover {
+    color: #828282;
+  }
 }
 .shop-wear__price {
   font-weight: 500;
@@ -683,9 +738,62 @@ body [class*=__container] {
   font-size: 24px;
   text-transform: capitalize;
 }
-.sidebar__item {
+.sidebar__form {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px 0;
+}
+.sidebar__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 9px;
+}
+.sidebar__checkbox {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  min-width: 10px;
+  min-height: 10px;
+  border: 1px solid #828282;
+  -webkit-transition: all ease-out 0.2s;
+  -o-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+}
+@media (any-hover: hover) {
+  .sidebar__checkbox:hover {
+    border: 1px solid #3F3F3F;
+  }
+}
+.sidebar__checkbox:checked {
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+.sidebar__checkbox::before {
+  content: "";
+  position: absolute;
+  inset: 1px auto auto 0;
+  min-width: 8px;
+  min-height: 6px;
+  opacity: 0;
+  background: url("../img/icons/checkmark.svg") no-repeat;
+}
+.sidebar__checkbox:checked::before {
+  opacity: 1;
+}
+.sidebar__checkbox:checked + .sidebar__label {
+  color: #000000;
+}
+.sidebar__label {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #3F3F3F;
+  cursor: pointer;
 }

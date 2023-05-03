@@ -50,14 +50,14 @@
         border: 2px solid $main-border-color;
 
         &:active {
-            color: #3f3f3f;
+            color: $dark-gray;
             background-color: $main-white-color;
             border: 2px solid $secondary-font-color;
         }
 
         @media (any-hover: hover) {
             &:hover {
-                color: #3f3f3f;
+                color: $dark-gray;
                 background-color: $main-white-color;
                 border: 2px solid $secondary-font-color;
             }
