@@ -447,10 +447,15 @@ body {
 
     &__container {
         display: flex;
+        position: relative;
     }
 
     &__sidebar {
+        position: absolute;
+        inset: 0 auto auto -170px;
+        height: 100%;
         flex: 1 1 21.4%;
+        padding-right: 30px;
         border-right: 1px solid $main-border-color;
 
         &>*:not(:last-child) {
@@ -564,6 +569,10 @@ body {
     }
 
     &__price {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: baseline;
+        gap: 2px 14px;
         font-weight: 500;
         font-size: 22px;
         text-transform: uppercase;
@@ -579,7 +588,6 @@ body {
         text-transform: uppercase;
         text-decoration: line-through;
         color: $secondary-font-color;
-        margin-left: 14px;
     }
 
     &__more {
@@ -590,6 +598,33 @@ body {
 }
 
 .sidebar {
+    &__button {
+        position: absolute;
+        inset: 0 0 auto auto;
+        width: 30px;
+        height: 100%;
+        margin: 0;
+        background-color: $main-border-color;
+
+        &::before {
+            content: 'Sort';
+            position: absolute;
+            inset: 15px auto auto 0;
+            font-size: 14px;
+            line-height: 1;
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+        }
+
+        &::after {
+            content: '>';
+            position: absolute;
+            inset: 50% auto auto 35%;
+            font-size: 27px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+    }
 
     &__title {
         font-size: 24px;

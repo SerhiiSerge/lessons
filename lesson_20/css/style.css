@@ -597,11 +597,16 @@ body [class*=__container] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 .shop-wear__sidebar {
+  position: absolute;
+  inset: 0 auto auto -170px;
+  height: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 21.4%;
           flex: 1 1 21.4%;
+  padding-right: 30px;
   border-right: 1px solid #C4C4C4;
 }
 .shop-wear__sidebar > *:not(:last-child) {
@@ -715,6 +720,15 @@ body [class*=__container] {
   }
 }
 .shop-wear__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 2px 14px;
   font-weight: 500;
   font-size: 22px;
   text-transform: uppercase;
@@ -728,11 +742,37 @@ body [class*=__container] {
   text-transform: uppercase;
   text-decoration: line-through;
   color: #828282;
-  margin-left: 14px;
 }
 .shop-wear__more {
   -ms-flex-item-align: center;
       align-self: center;
+}
+.sidebar__button {
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 30px;
+  height: 100%;
+  margin: 0;
+  background-color: #C4C4C4;
+}
+.sidebar__button::before {
+  content: "Sort";
+  position: absolute;
+  inset: 15px auto auto 0;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.sidebar__button::after {
+  content: ">";
+  position: absolute;
+  inset: 50% auto auto 35%;
+  font-size: 27px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 .sidebar__title {
   font-size: 24px;
