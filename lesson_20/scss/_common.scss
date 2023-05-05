@@ -74,9 +74,17 @@
 
     @media (max-width: 767.98px) {
         position: absolute;
-        inset: 0 auto auto -195px;
-        padding: 0 44px 0 14px;
+        inset: 0 auto auto -181px;
         height: 100%;
+        background-color: #000000b9;
+        transition: inset ease-out 0.5s;
+
+        &__wrapper {
+            padding-left: 14px;
+            width: 70%;
+            height: 100%;
+            background-color: $main-white-color;
+        }
 
         &__button {
             position: absolute;
@@ -86,6 +94,7 @@
             margin: 0;
             background-color: $light-gray;
             border-right: 1px solid $main-border-color;
+            transition: border ease-out 0.3s;
 
             &:active {
                 border-right: 1px solid $secondary-font-color;
@@ -109,7 +118,6 @@
                 font-size: 27px;
                 line-height: 1;
                 color: $secondary-font-color;
-                text-transform: uppercase;
             }
         }
     }
@@ -179,10 +187,25 @@
     }
 }
 
+/* ====== Sidebar Open ====== */
 @media (max-width: 767.98px) {
     .sidebar-open .sidebar {
         inset: 0 auto auto 0;
         width: 100%;
+
+        &__wrapper {
+            position: relative;
+        }
+
+        &__button {
+            &::before {
+                content: 'Close';
+            }
+
+            &::after {
+                content: '<';
+            }
+        }
     }
 }
 

@@ -147,9 +147,18 @@ button {
 @media (max-width: 767.98px) {
   .sidebar {
     position: absolute;
-    inset: 0 auto auto -195px;
-    padding: 0 44px 0 14px;
+    inset: 0 auto auto -181px;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.7254901961);
+    -webkit-transition: inset ease-out 0.5s;
+    -o-transition: inset ease-out 0.5s;
+    transition: inset ease-out 0.5s;
+  }
+  .sidebar__wrapper {
+    padding-left: 14px;
+    width: 70%;
+    height: 100%;
+    background-color: #ffffff;
   }
   .sidebar__button {
     position: absolute;
@@ -159,6 +168,9 @@ button {
     margin: 0;
     background-color: #F0F2F2;
     border-right: 1px solid #C4C4C4;
+    -webkit-transition: border ease-out 0.3s;
+    -o-transition: border ease-out 0.3s;
+    transition: border ease-out 0.3s;
   }
   .sidebar__button:active {
     border-right: 1px solid #828282;
@@ -182,7 +194,6 @@ button {
     font-size: 27px;
     line-height: 1;
     color: #828282;
-    text-transform: uppercase;
   }
 }
 .sidebar__title {
@@ -249,10 +260,20 @@ button {
   cursor: pointer;
 }
 
+/* ====== Sidebar Open ====== */
 @media (max-width: 767.98px) {
   .sidebar-open .sidebar {
     inset: 0 auto auto 0;
     width: 100%;
+  }
+  .sidebar-open .sidebar__wrapper {
+    position: relative;
+  }
+  .sidebar-open .sidebar__button::before {
+    content: "Close";
+  }
+  .sidebar-open .sidebar__button::after {
+    content: "<";
   }
 }
 .card {
