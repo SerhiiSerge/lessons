@@ -2,8 +2,8 @@
 
 document.addEventListener('click', function (e) {
     const targetElement = e.target;
-    if (targetElement.closest('.menu-icon')) {
-        document.documentElement.classList.toggle('menu-open');
+    if (targetElement.closest('.sidebar__button')) {
+        document.documentElement.classList.toggle('sidebar-open');
         e.preventDefault();
     }
 })

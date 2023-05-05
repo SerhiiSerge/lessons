@@ -113,12 +113,12 @@ body {
     }
 
     &__item:active &__link {
-        background-color: #F0F2F2;
+        background-color: $light-gray;
     }
 
     @media (any-hover: hover) {
         &__item:hover &__link {
-            background-color: #F0F2F2;
+            background-color: $light-gray;
         }
     }
 }
@@ -451,13 +451,6 @@ body {
     }
 
     &__sidebar {
-        position: absolute;
-        inset: 0 auto auto -170px;
-        height: 100%;
-        flex: 1 1 21.4%;
-        padding-right: 30px;
-        border-right: 1px solid $main-border-color;
-
         &>*:not(:last-child) {
             margin-bottom: 30px;
         }
@@ -470,124 +463,11 @@ body {
         gap: 63px 0;
     }
 
-    &__items {
+    &__cards {
         display: grid;
         grid-template: auto / repeat(4, 1fr);
         grid-auto-rows: auto;
         gap: 48px 26px;
-    }
-
-    &__item {
-        position: relative;
-        overflow: hidden;
-        @extend %display-flex-column;
-    }
-
-    &__image {
-        @include image-wrapper-relative ($padding-bottom: 130.81%);
-
-        @media (any-hover: hover) {
-            &:hover img {
-                transform: scale(1.05);
-                overflow: hidden;
-            }
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 14px;
-        }
-
-        & img {
-            @include image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover);
-            transition: transform ease-out 0.3s;
-        }
-    }
-
-    &__discount {
-        position: absolute;
-        inset: 15px auto auto 0;
-        padding: 0 5px;
-        font-size: 14px;
-        color: $main-white-color;
-        background-color: $main-black-color;
-        transition: background-color ease-out 0.2s;
-
-        &:active {
-            background-color: $red-color;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $red-color;
-            }
-        }
-    }
-
-    &__body {
-        flex: 1 0 auto;
-
-        &:not(:last-child) {
-            margin-bottom: 18px;
-        }
-    }
-
-    &__category {
-        font-weight: 600;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: #BDBDBD;
-        transition: color ease-out 0.2s;
-
-        &:active {
-            color: $secondary-font-color;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: $secondary-font-color;
-            }
-        }
-    }
-
-    &__title {
-        font-weight: 300;
-        font-size: 18px;
-    }
-
-    &__link {
-        transition: color ease-out 0.2s;
-
-        &:active {
-            color: $secondary-font-color;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: $secondary-font-color;
-            }
-        }
-    }
-
-    &__price {
-        display: flex;
-        flex-wrap: wrap-reverse;
-        align-items: baseline;
-        gap: 2px 14px;
-        font-weight: 500;
-        font-size: 22px;
-        text-transform: uppercase;
-
-        &_new {
-            color: $red-color;
-        }
-    }
-
-    &__old-price {
-        font-size: 14px;
-        line-height: 1.7;
-        text-transform: uppercase;
-        text-decoration: line-through;
-        color: $secondary-font-color;
     }
 
     &__more {
@@ -595,98 +475,4 @@ body {
     }
 
     &__button {}
-}
-
-.sidebar {
-    &__button {
-        position: absolute;
-        inset: 0 0 auto auto;
-        width: 30px;
-        height: 100%;
-        margin: 0;
-        background-color: $main-border-color;
-
-        &::before {
-            content: 'Sort';
-            position: absolute;
-            inset: 15px auto auto 0;
-            font-size: 14px;
-            line-height: 1;
-            text-transform: uppercase;
-            transform: rotate(-90deg);
-        }
-
-        &::after {
-            content: '>';
-            position: absolute;
-            inset: 50% auto auto 35%;
-            font-size: 27px;
-            line-height: 1;
-            text-transform: uppercase;
-        }
-    }
-
-    &__title {
-        font-size: 24px;
-        text-transform: capitalize;
-    }
-
-    &__form {
-        @extend %display-flex-column;
-        align-items: flex-start;
-        gap: 20px 0;
-    }
-
-    &__row {
-        display: flex;
-        align-items: baseline;
-        gap: 9px;
-    }
-
-    &__checkbox {
-        position: relative;
-        appearance: none;
-        cursor: pointer;
-        min-width: 10px;
-        min-height: 10px;
-        border: 1px solid $secondary-font-color;
-        transition: all ease-out 0.2s;
-
-        @media (any-hover: hover) {
-            &:hover {
-                border: 1px solid $dark-gray;
-            }
-        }
-
-        &:checked {
-            background-color: $main-black-color;
-            border: 1px solid $main-black-color;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 1px auto auto 0;
-            min-width: 8px;
-            min-height: 6px;
-            opacity: 0;
-            background: url('../img/icons/checkmark.svg') no-repeat;
-        }
-
-        &:checked::before {
-            opacity: 1;
-        }
-
-        &:checked+.sidebar__label {
-            color: $main-black-color;
-        }
-    }
-
-    &__label {
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: $dark-gray;
-        cursor: pointer;
-    }
 }
