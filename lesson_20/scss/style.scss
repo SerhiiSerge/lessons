@@ -572,16 +572,28 @@ body {
 
     &__body {
         display: grid;
-        grid-template: minmax(420px, 1fr) / repeat(4, fit-content);
-        grid-auto-rows: auto;
-        gap: 10px 30px;
+        grid-template: auto / repeat(auto-fit, minmax(292px, 1fr));
+        gap: 20px;
+
+        @media (min-width: 808px) {
+            grid-template: auto / repeat(auto-fit, minmax(375px, 1fr));
+            gap: 20px 30px;
+        }
+
+        @media (min-width: 1618px) {
+            grid-template: minmax(420px, 1fr) / repeat(auto-fit, minmax(375px, 1fr));
+        }
     }
 }
 
 .column {
     @extend %display-flex-column;
-    padding: 24px 24px 12px 24px;
+    padding: 12px;
     background-color: $main-white-color;
+
+    @media (min-width: 808px) {
+        padding: 24px 24px 12px 24px;
+    }
 
     &__category {
         font-weight: 600;
