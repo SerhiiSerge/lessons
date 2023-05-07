@@ -1019,7 +1019,7 @@ main {
     .header__search {
         flex: 0 0 32px;
         border-left: 1px solid #a7a4a441;
-        background: url('/img/icons/search.svg') 100% center no-repeat;
+        background: url('../img/icons/search.svg') 100% center no-repeat;
     }
 
     .header__search::before {
