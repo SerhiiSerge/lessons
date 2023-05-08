@@ -1,0 +1,292 @@
+@use "sass:math";
+
+// ====== Reset Styles ====== //
+@import "_reset";
+
+// ====== Patterns ====== //
+@import "_functions";
+@import "_variables";
+@import "_mixins";
+@import "_partials";
+
+// ====== Common ====== //
+@import "_common";
+
+// ====== Font Family ====== //
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* ====== General Styles ====== */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: rem(12);
+    line-height: 1.67;
+    color: $grayColor;
+    background-color: $whiteColor;
+
+    .wrapper {
+        @extend %display-flex-column;
+        min-height: 100%;
+        overflow: clip;
+
+        main {
+            flex: 1 0 auto;
+        }
+    }
+}
+
+[class*=__container] {
+    max-width: rem(1270);
+    margin: 0 auto;
+    padding: 0 rem(15);
+}
+
+/* ====== Header ====== */
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(10) rem(20);
+        padding: rem(5) rem(15);
+        min-height: rem(50);
+
+        @media (min-width: em(768)) {
+            min-height: rem(97);
+        }
+
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: rem(5) rem(25);
+    }
+}
+
+.menu {
+    @media (max-width: em(767.98)) {
+
+        &__body {
+            position: fixed;
+            inset: 0 auto auto -100%;
+            width: 100%;
+            height: 100%;
+            padding: rem(70) 0 0 rem(20);
+            background-color: $darkGrayColor;
+            overflow: auto;
+            transition: inset 0.3s;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: fixed;
+                inset: 0 auto auto -100%;
+                width: 100%;
+                height: rem(50);
+                background-color: $darkGrayColor;
+                z-index: 1;
+                transition: inset 0.3s;
+            }
+        }
+    }
+
+    &__list {
+        @extend %display-flex-column;
+        gap: rem(15) 0;
+
+        @media (min-width: em(768)) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: rem(5) rem(25);
+        }
+    }
+
+    &__item {
+        @media (min-width: em(768)) {
+            &_drop {
+                position: relative;
+                padding-right: rem(13);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: rem(10) 0 auto auto;
+                    width: rem(8);
+                    height: rem(5);
+                    background: url('../img/icons/dropdown-arrow.svg') no-repeat;
+                    opacity: 0.5;
+                    cursor: pointer;
+                    transition: opacity 0.3s;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover::after {
+                        opacity: 1;
+                    }
+
+                    &:hover .menu__dropdown {
+                        visibility: visible;
+                        opacity: 1;
+                        top: 100%;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover .menu__link {
+                color: $whiteColor;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: inline-block;
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: 2.08;
+        color: $whiteOpacityColor;
+        transition: color 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: auto auto 0 50%;
+            width: 0;
+            height: rem(2);
+            background-color: $beigeColor;
+            border-radius: rem(2);
+            transition: width 0.3s, inset 0.3s;
+        }
+
+        &.active,
+        &:active {
+            color: $whiteColor;
+        }
+
+        &.active::after {
+            width: 100%;
+            inset: auto auto 0 0;
+        }
+
+        @media (any-hover: hover) {
+            &:hover::after {
+                width: 100%;
+                inset: auto auto 0 0;
+            }
+        }
+
+        @media (min-width: em(768)) {
+            font-size: inherit;
+        }
+    }
+
+    &__dropdown {
+        @media (min-width: em(768)) {
+            position: absolute;
+            inset: 120% auto auto rem(-20);
+            padding-top: rem(40);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+            z-index: 10;
+        }
+    }
+}
+
+.dropdown {
+    &__list {
+        padding: rem(15) rem(0) rem(0) rem(20);
+
+        @media (min-width: em(768)) {
+            min-width: rem(140);
+            padding: rem(20);
+            background-color: $darkGrayColor;
+            border-radius: rem(5);
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__link {
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: 2.08;
+        color: $whiteOpacityColor;
+        transition: color 0.3s;
+
+        &:active {
+            color: $whiteColor;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $whiteColor;
+            }
+        }
+
+        @media (min-width: em(768)) {
+            font-size: inherit;
+        }
+    }
+}
+
+/* ====== Main ====== */
+
+/* ====== Footer ====== */
+.footer {
+    background-color: $darkGrayColor;
+
+    &__container {
+        min-height: rem(125);
+
+        @media (min-width: em(768)) {
+            min-height: rem(205);
+        }
+    }
+
+    &__top,
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(15) rem(20);
+        padding: rem(20) 0;
+
+        @media (min-width: em(768)) {
+            padding: rem(40) 0;
+        }
+    }
+
+    &__bottom {
+        border-top: rem(1) solid $lightGrayOpacityColor;
+    }
+
+    &__menu {
+        .menu__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: rem(5) rem(25);
+        }
+
+        .menu__link {
+            font-size: inherit;
+        }
+    }
+
+    &__address,
+    &__rights {
+        font-weight: 500;
+        line-height: 1.67;
+        color: $whiteOpacityColor;
+    }
+}
