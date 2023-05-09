@@ -147,7 +147,8 @@ button {
     transition: inset ease-out 0.8s;
   }
   .sidebar__wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
     padding-left: 14px;
     width: 100%;
     -webkit-transition: width ease-out 0.8s;
