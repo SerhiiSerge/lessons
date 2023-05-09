@@ -148,6 +148,7 @@ body {
         font-weight: 500;
         font-size: rem(18);
         line-height: 2.08;
+        text-transform: capitalize;
         color: $whiteOpacityColor;
         transition: color 0.3s;
 
@@ -239,7 +240,82 @@ body {
     }
 }
 
-/* ====== Main ====== */
+/* ====== Main Slider ====== */
+.main {
+
+    &__slider {
+        position: relative;
+        inset: rem(-50) auto auto 0;
+
+        @media (min-width: em(768)) {
+            inset: rem(-97) auto auto 0;
+        }
+    }
+}
+
+.slider {
+    color: $lightGrayColor;
+
+    &__container {
+        @extend %display-flex-column;
+        justify-content: flex-end;
+        gap: rem(40) rem(0);
+        padding: rem(70) rem(15) rem(40);
+        min-height: 100vh;
+
+
+        @media (min-width: em(768)) {
+            padding: rem(125) rem(15) rem(40);
+        }
+    }
+
+    &__iamge {
+        @include image-wrapper-absolute ($top: 0, $right: auto, $buttom: auto, $left: 0, $padding-bottom: 0%);
+        background-color: $darkGrayColor;
+        z-index: -1;
+
+        & img {
+            @include image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover);
+            filter: opacity(0.6);
+        }
+    }
+
+    &__body {
+        @extend %display-flex-column;
+        gap: rem(15) rem(0);
+        max-width: rem(605);
+    }
+
+    &__link {
+        transition: color 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $whiteOpacityColor;
+            }
+        }
+    }
+
+    &__subhead {
+        max-width: rem(405);
+    }
+
+    &__pages {
+        display: flex;
+        align-items: center;
+        gap: rem(0) rem(10);
+        justify-content: flex-end;
+        letter-spacing: 0.2em;
+
+        &::before {
+            content: '';
+            flex: 0 0 rem(44);
+            width: rem(44);
+            height: rem(1);
+            background-color: $whiteColor;
+        }
+    }
+}
 
 /* ====== Footer ====== */
 .footer {
@@ -271,6 +347,10 @@ body {
         border-top: rem(1) solid $lightGrayOpacityColor;
     }
 
+    &__logo {
+        z-index: 0;
+    }
+
     &__menu {
         .menu__list {
             flex-direction: row;
@@ -288,5 +368,9 @@ body {
         font-weight: 500;
         line-height: 1.67;
         color: $whiteOpacityColor;
+    }
+
+    &__rights {
+        text-transform: capitalize;
     }
 }
