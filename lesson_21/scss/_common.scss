@@ -18,48 +18,6 @@
     }
 }
 
-/* ====== Search Button ====== */
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: rem(43);
-    min-height: rem(25);
-    border-right: rem(1) solid $whiteOpacityColor;
-
-    @media (any-hover: hover) {
-        &:hover &__icon {
-            & path {
-                fill-opacity: 1;
-            }
-        }
-    }
-
-    &:active &__icon {
-        & path {
-            fill-opacity: 1;
-        }
-    }
-
-    &__icon {
-        @media (max-width: em(767.98)) {
-            width: rem(18);
-            height: rem(19);
-        }
-
-        & path {
-            transition: fill-opacity 0.3s;
-        }
-    }
-
-    @media (min-width: em(768)) {
-        justify-content: flex-end;
-        min-width: rem(37);
-        border-right: none;
-        border-left: rem(1) solid $whiteOpacityColor;
-    }
-}
-
 /* ====== Menu Burger ====== */
 .menu-icon {
     display: none;

@@ -60,7 +60,14 @@ body {
     &__navigation {
         display: flex;
         align-items: center;
-        gap: rem(5) rem(25);
+        gap: rem(5) rem(15);
+        transition: transform 0.8s;
+        z-index: 2;
+
+        @media (min-width: em(768)) {
+            transform: translate(rem(215), 0);
+            gap: rem(5) rem(25);
+        }
     }
 }
 
@@ -139,6 +146,11 @@ body {
             &:hover .menu__link {
                 color: $whiteColor;
             }
+
+            &:hover .menu__link::after {
+                width: 100%;
+                inset: auto auto 0 0;
+            }
         }
     }
 
@@ -171,13 +183,6 @@ body {
         &.active::after {
             width: 100%;
             inset: auto auto 0 0;
-        }
-
-        @media (any-hover: hover) {
-            &:hover::after {
-                width: 100%;
-                inset: auto auto 0 0;
-            }
         }
 
         @media (min-width: em(768)) {
@@ -236,6 +241,113 @@ body {
 
         @media (min-width: em(768)) {
             font-size: inherit;
+        }
+    }
+}
+
+.search {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: rem(10);
+    min-height: rem(29);
+    overflow: hidden;
+
+    @media (min-width: em(768)) {
+        flex-direction: row;
+        gap: rem(15);
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: rem(37);
+        min-height: rem(25);
+        border-right: rem(1) solid $whiteOpacityColor;
+
+        &:active .search__icon {
+            & path {
+                fill-opacity: 1;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover .search__icon {
+                & path {
+                    fill-opacity: 1;
+                }
+            }
+        }
+
+        @media (min-width: em(768)) {
+            justify-content: flex-end;
+            border-right: none;
+            border-left: rem(1) solid $whiteOpacityColor;
+        }
+    }
+
+    &__icon {
+        @media (max-width: em(767.98)) {
+            width: rem(18);
+            height: rem(19);
+        }
+
+        & path {
+            transition: fill-opacity 0.3s;
+        }
+    }
+
+    &__input {
+        visibility: hidden;
+        font-weight: 500;
+        line-height: 2.08;
+        color: $whiteColor;
+        width: rem(100);
+        min-height: rem(25);
+        padding: 0 rem(5);
+        border-radius: rem(3);
+        background-color: $whiteOpacityColor;
+        transition: transform 0.5s;
+
+        &:focus {
+            outline: rem(1) solid $whiteColor;
+        }
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            content: url('../img/icons/search-cross.svg');
+            cursor: pointer;
+            transition: transform 0.3s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+        }
+
+        @media (max-width: em(767.98)) {
+            transform: translate(rem(150), 0);
+        }
+
+        @media (min-width: em(768)) {
+            width: rem(200);
+            transform: translate(rem(216), 0);
+        }
+    }
+}
+
+.search-open {
+
+    .search__input {
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+
+    @media (min-width: em(768)) {
+        .header__navigation {
+            transform: translate(0, 0);
         }
     }
 }
