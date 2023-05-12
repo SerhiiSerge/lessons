@@ -64,9 +64,12 @@ body {
         transition: transform 0.8s;
         z-index: 2;
 
+        @media (min-width: em(400)) {
+            gap: rem(5) rem(25);
+        }
+
         @media (min-width: em(768)) {
             transform: translate(rem(215), 0);
-            gap: rem(5) rem(25);
         }
     }
 }
@@ -253,9 +256,12 @@ body {
     min-height: rem(29);
     overflow: hidden;
 
+    @media (min-width: em(350)) {
+        gap: rem(15);
+    }
+
     @media (min-width: em(768)) {
         flex-direction: row;
-        gap: rem(15);
     }
 
     &__button {
@@ -312,6 +318,7 @@ body {
 
         &:focus {
             outline: rem(1) solid $whiteColor;
+            border: rem(1) solid $whiteColor;
         }
 
         &::-webkit-search-cancel-button {
@@ -327,12 +334,23 @@ body {
             }
         }
 
+        @media (min-width: em(350)) {
+            width: rem(125);
+        }
+
+        @media (min-width: em(400)) {
+            width: rem(150);
+        }
+
+        @media (min-width: em(450)) {
+            width: rem(200);
+        }
+
         @media (max-width: em(767.98)) {
             transform: translate(rem(150), 0);
         }
 
         @media (min-width: em(768)) {
-            width: rem(200);
             transform: translate(rem(216), 0);
         }
     }
