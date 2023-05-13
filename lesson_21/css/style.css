@@ -151,6 +151,19 @@ button {
 .title_white {
   color: #F8F9FA;
 }
+.title__link {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.title__link:active {
+  color: #CCD5AE;
+}
+@media (any-hover: hover) {
+  .title__link:hover {
+    color: #CCD5AE;
+  }
+}
 
 /* ====== Card ====== */
 /* ====== General Styles ====== */
@@ -640,7 +653,12 @@ body .wrapper main {
 
 /* ====== Main Articles ====== */
 .main__articles:not(:last-child) {
-  margin-bottom: 6.25rem;
+  margin-bottom: 3.125rem;
+}
+@media (min-width: 61.875em) {
+  .main__articles:not(:last-child) {
+    margin-bottom: 6.25rem;
+  }
 }
 
 .articles__header {
@@ -652,7 +670,12 @@ body .wrapper main {
           justify-content: space-between;
 }
 .articles__header:not(:last-child) {
-  margin-bottom: 2.75rem;
+  margin-bottom: 1.5625rem;
+}
+@media (min-width: 61.875em) {
+  .articles__header:not(:last-child) {
+    margin-bottom: 2.75rem;
+  }
 }
 .articles__categories {
   font-weight: 500;
@@ -677,9 +700,22 @@ body .wrapper main {
   }
 }
 .articles__cards:not(:last-child), .articles__more:not(:last-child) {
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 61.875em) {
+  .articles__cards:not(:last-child), .articles__more:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
 }
 
+.add-columns {
+  display: none;
+}
+@media (min-width: 64em) {
+  .add-columns {
+    display: block;
+  }
+}
 .add-columns__button {
   font-weight: 500;
   line-height: 2.08;
@@ -702,12 +738,53 @@ body .wrapper main {
 
 .cards {
   display: grid;
+  grid-template: auto/1fr;
+  gap: 1.5625rem 0.9375rem;
+}
+@media (min-width: 26.5625em) {
+  .cards {
+    grid-template: auto/repeat(2, 1fr);
+  }
+}
+@media (min-width: 37.5em) {
+  .cards {
+    grid-template: auto/repeat(3, 1fr);
+  }
+}
+@media (min-width: 61.875em) {
+  .cards {
+    gap: 2.8125rem 1.875rem;
+  }
+}
+
+.four-columns .cards {
   grid-template: auto/repeat(4, 1fr);
-  gap: 2.8125rem 1.875rem;
+}
+@media (min-width: 64em) and (max-width: 79.375em) {
+  .four-columns .cards {
+    gap: 1.5625rem 0.9375rem;
+  }
+  .four-columns .card > *:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
+  .four-columns .card__header:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+  .four-columns .author {
+    padding-top: 0.625rem;
+  }
+  .four-columns .card__title {
+    font-size: 1.125rem;
+  }
 }
 
 .card > *:not(:last-child) {
-  margin-bottom: 0.9375rem;
+  margin-bottom: 0.625rem;
+}
+@media (min-width: 61.875em) {
+  .card > *:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
 }
 .card__header {
   position: relative;
@@ -719,7 +796,12 @@ body .wrapper main {
   transition: background-color 0.3s;
 }
 .card__header:not(:last-child) {
-  margin-bottom: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+@media (min-width: 61.875em) {
+  .card__header:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
 }
 .card__header:active {
   background-color: #212529;
@@ -790,29 +872,25 @@ body .wrapper main {
             filter: opacity(0.5);
   }
 }
+@media (min-width: 26.5625em) and (max-width: 57.8125em) {
+  .card__title {
+    font-size: 1.125rem;
+  }
+}
 .card__preview {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
 }
 
-.title__link {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
-  transition: color 0.3s;
-}
-.title__link:active {
-  color: #CCD5AE;
-}
-@media (any-hover: hover) {
-  .title__link:hover {
-    color: #CCD5AE;
-  }
-}
-
 .author {
-  padding-top: 0.9375rem;
+  padding-top: 0.625rem;
   border-top: 0.0625rem solid #e5e5e5;
+}
+@media (min-width: 61.875em) {
+  .author {
+    padding-top: 0.9375rem;
+  }
 }
 .author__link {
   position: relative;
@@ -857,7 +935,7 @@ body .wrapper main {
   line-height: 2.08;
   text-transform: capitalize;
   color: #F8F9FA;
-  min-width: 11.125rem;
+  min-width: 100%;
   min-height: 2.5rem;
   padding: 0.3125rem 0.625rem;
   background-color: #212529;
@@ -866,6 +944,11 @@ body .wrapper main {
   -webkit-transition: color 0.3s, background-color 0.3s;
   -o-transition: color 0.3s, background-color 0.3s;
   transition: color 0.3s, background-color 0.3s;
+}
+@media (min-width: 26.5625em) {
+  .more__button {
+    min-width: 11.125rem;
+  }
 }
 .more__button:active {
   color: #212529;

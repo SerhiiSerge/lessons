@@ -458,7 +458,11 @@ body {
 .main {
     &__articles {
         &:not(:last-child) {
-            margin-bottom: rem(100);
+            margin-bottom: rem(50);
+
+            @media (min-width: em(990)) {
+                margin-bottom: rem(100);
+            }
         }
     }
 }
@@ -469,7 +473,11 @@ body {
         justify-content: space-between;
 
         &:not(:last-child) {
-            margin-bottom: rem(44);
+            margin-bottom: rem(25);
+
+            @media (min-width: em(990)) {
+                margin-bottom: rem(44);
+            }
         }
     }
 
@@ -497,17 +505,24 @@ body {
         }
     }
 
-    &__add-columns {}
-
     &__cards,
     &__more {
         &:not(:last-child) {
-            margin-bottom: rem(60);
+            margin-bottom: rem(30);
+
+            @media (min-width: em(990)) {
+                margin-bottom: rem(60);
+            }
         }
     }
 }
 
 .add-columns {
+    display: none;
+
+    @media (min-width: em(1024)) {
+        display: block;
+    }
 
     &__button {
         font-weight: 500;
@@ -518,10 +533,6 @@ body {
         &:not(:last-child) {
             margin-right: rem(20);
         }
-
-        &_three {}
-
-        &_four {}
 
         &.active,
         &:active {
@@ -538,15 +549,63 @@ body {
 
 .cards {
     display: grid;
-    grid-template: auto / repeat(4, 1fr);
-    gap: rem(45) rem(30);
+    grid-template: auto / 1fr;
+    gap: rem(25) rem(15);
+
+    @media (min-width: em(425)) {
+        grid-template: auto / repeat(2, 1fr);
+    }
+
+    @media (min-width: em(600)) {
+        grid-template: auto / repeat(3, 1fr);
+    }
+
+    @media (min-width: em(990)) {
+        gap: rem(45) rem(30);
+    }
+}
+
+.four-columns {
+    & .cards {
+        grid-template: auto / repeat(4, 1fr);
+    }
+
+    @media (min-width: em(1024)) and (max-width: em(1270)) {
+        & .cards {
+            gap: rem(25) rem(15);
+        }
+
+        & .card {
+            &>*:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+
+        & .card__header {
+            &:not(:last-child) {
+                margin-bottom: rem(15);
+            }
+        }
+
+        & .author {
+            padding-top: rem(10);
+        }
+
+        & .card__title {
+            font-size: rem(18);
+        }
+    }
 }
 
 .card {
     @extend %display-flex-column;
 
     &>*:not(:last-child) {
-        margin-bottom: rem(15);
+        margin-bottom: rem(10);
+
+        @media (min-width: em(990)) {
+            margin-bottom: rem(15);
+        }
     }
 
     &__header {
@@ -557,7 +616,11 @@ body {
         transition: background-color 0.3s;
 
         &:not(:last-child) {
-            margin-bottom: rem(30);
+            margin-bottom: rem(15);
+
+            @media (min-width: em(990)) {
+                margin-bottom: rem(30);
+            }
         }
 
         &:active {
@@ -617,31 +680,24 @@ body {
         }
     }
 
+    &__title {
+        @media (min-width: em(425)) and (max-width: em(925)) {
+            font-size: rem(18);
+        }
+    }
+
     &__preview {
         flex: 1 0 auto;
     }
 }
 
-.title {
-
-    &__link {
-        transition: color 0.3s;
-
-        &:active {
-            color: $goldColor;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: $goldColor;
-            }
-        }
-    }
-}
-
 .author {
-    padding-top: rem(15);
+    padding-top: rem(10);
     border-top: rem(1) solid $lightGrayColor;
+
+    @media (min-width: em(990)) {
+        padding-top: rem(15);
+    }
 
     &__link {
         position: relative;
@@ -685,13 +741,17 @@ body {
         line-height: 2.08;
         text-transform: capitalize;
         color: $whiteColor;
-        min-width: rem(178);
+        min-width: 100%;
         min-height: rem(40);
         padding: rem(5) rem(10);
         background-color: $darkGrayColor;
         border: rem(2) solid $darkGrayColor;
         border-radius: rem(3);
         transition: color 0.3s, background-color 0.3s;
+
+        @media (min-width: em(425)) {
+            min-width: rem(178);
+        }
 
         &:active {
             color: $darkGrayColor;
