@@ -25,6 +25,7 @@ body {
     background-color: $whiteColor;
 
     .wrapper {
+        position: relative;
         @extend %display-flex-column;
         min-height: 100%;
         overflow: clip;
@@ -43,6 +44,10 @@ body {
 
 /* ====== Header ====== */
 .header {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+
     &__container {
         display: flex;
         align-items: center;
@@ -54,7 +59,6 @@ body {
         @media (min-width: em(768)) {
             min-height: rem(97);
         }
-
     }
 
     &__navigation {
@@ -372,17 +376,17 @@ body {
 
 /* ====== Main Slider ====== */
 .main {
-
     &__slider {
         position: relative;
-        inset: rem(-50) auto auto 0;
 
         &:not(:last-child) {
-            margin-bottom: rem(100);
+            margin-bottom: rem(50);
         }
 
         @media (min-width: em(768)) {
-            inset: rem(-97) auto auto 0;
+            &:not(:last-child) {
+                margin-bottom: rem(100);
+            }
         }
     }
 }
@@ -397,13 +401,12 @@ body {
         padding: rem(70) rem(15) rem(40);
         min-height: 100vh;
 
-
         @media (min-width: em(768)) {
             padding: rem(125) rem(15) rem(40);
         }
     }
 
-    &__iamge {
+    &__image {
         @include image-wrapper-absolute ($top: 0, $right: auto, $buttom: auto, $left: 0, $padding-bottom: 0%);
         background-color: $darkGrayColor;
         z-index: -1;
@@ -453,7 +456,6 @@ body {
 
 /* ====== Main Articles ====== */
 .main {
-
     &__articles {
         &:not(:last-child) {
             margin-bottom: rem(100);
@@ -462,9 +464,6 @@ body {
 }
 
 .articles {
-
-    &__container {}
-
     &__header {
         display: flex;
         justify-content: space-between;
@@ -485,23 +484,27 @@ body {
             padding-left: rem(7);
         }
 
+        &:active {
+            color: $whiteColor;
+            background-color: $darkGrayOpacityColor;
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 color: $whiteColor;
-                background-color: #2125294d;
+                background-color: $darkGrayOpacityColor;
             }
         }
     }
 
     &__add-columns {}
 
-    &__cards {
+    &__cards,
+    &__more {
         &:not(:last-child) {
             margin-bottom: rem(60);
         }
     }
-
-    &__more {}
 }
 
 .add-columns {
@@ -535,12 +538,16 @@ body {
 
 .cards {
     display: grid;
-    grid-template: auto / repeat(3, minmax(rem(250), 1fr));
-
-    &__card {}
+    grid-template: auto / repeat(4, 1fr);
+    gap: rem(45) rem(30);
 }
 
 .card {
+    @extend %display-flex-column;
+
+    &>*:not(:last-child) {
+        margin-bottom: rem(15);
+    }
 
     &__header {
         position: relative;
@@ -548,6 +555,14 @@ body {
         border-radius: rem(3);
         overflow: hidden;
         transition: background-color 0.3s;
+
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+
+        &:active {
+            background-color: $darkGrayColor;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -558,7 +573,7 @@ body {
 
     &__category {
         position: absolute;
-        inset: rem(30) rem(30) auto auto;
+        inset: 12% 7.63% auto auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -573,6 +588,13 @@ body {
         color: $whiteColor;
         background-color: $darkGrayOpacityColor;
         z-index: 1;
+        transition: background-color 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $darkGrayColor;
+            }
+        }
     }
 
     &__image {
@@ -583,6 +605,10 @@ body {
             @include image-position ($top: 0, $right: auto, $buttom: auto, $left: 0, $object-fit: cover);
             transition: filter 0.3s;
 
+            &:active {
+                filter: opacity(0.5);
+            }
+
             @media (any-hover: hover) {
                 &:hover {
                     filter: opacity(0.5);
@@ -591,19 +617,19 @@ body {
         }
     }
 
-    &__date {}
-
-    &__title {}
-
-    &__preview {}
-
-    &__author {}
+    &__preview {
+        flex: 1 0 auto;
+    }
 }
 
 .title {
 
     &__link {
         transition: color 0.3s;
+
+        &:active {
+            color: $goldColor;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -614,15 +640,71 @@ body {
 }
 
 .author {
+    padding-top: rem(15);
+    border-top: rem(1) solid $lightGrayColor;
 
-    &__link {}
+    &__link {
+        position: relative;
+        border-bottom: rem(1) solid transparent;
+        transition: color 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: auto auto rem(1) 0;
+            width: 100%;
+            height: rem(1);
+            background-color: currentColor;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        &:active,
+        &:active::after {
+            color: $darkGrayColor;
+            opacity: 1;
+        }
+
+        @media (any-hover: hover) {
+
+            &:hover,
+            &:hover::after {
+                opacity: 1;
+                color: $darkGrayColor;
+            }
+        }
+    }
 }
 
 .more {
     display: flex;
     justify-content: center;
 
-    &__button {}
+    &__button {
+        font-weight: 500;
+        line-height: 2.08;
+        text-transform: capitalize;
+        color: $whiteColor;
+        min-width: rem(178);
+        min-height: rem(40);
+        padding: rem(5) rem(10);
+        background-color: $darkGrayColor;
+        border: rem(2) solid $darkGrayColor;
+        border-radius: rem(3);
+        transition: color 0.3s, background-color 0.3s;
+
+        &:active {
+            color: $darkGrayColor;
+            background-color: $whiteColor;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $darkGrayColor;
+                background-color: $whiteColor;
+            }
+        }
+    }
 }
 
 /* ====== Footer ====== */
