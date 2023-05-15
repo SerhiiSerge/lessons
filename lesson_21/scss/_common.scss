@@ -84,6 +84,11 @@
     }
 }
 
+/* ====== Date Color ====== */
+.date_white {
+    color: $lightGrayColor;
+}
+
 /* ====== Title ====== */
 .title {
     font-weight: 700;
@@ -93,6 +98,20 @@
 
     &_white {
         color: $whiteColor;
+
+        .title__link {
+            transition: color 0.3s;
+
+            &:active {
+                color: $whiteOpacityColor;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $whiteOpacityColor;
+                }
+            }
+        }
     }
 
     &_small {
@@ -114,6 +133,11 @@
             }
         }
     }
+}
+
+/* ====== Preview Color ====== */
+.preview_white {
+    color: $lightGrayColor;
 }
 
 /* ====== Cards ====== */
@@ -226,6 +250,10 @@
 
     &__preview {
         flex: 1 1 auto;
+
+        &>*:not(:last-child) {
+            margin-bottom: rem(5);
+        }
     }
 }
 
