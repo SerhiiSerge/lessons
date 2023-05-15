@@ -1,0 +1,63 @@
+.layout {
+    color: $lightGrayColor;
+    background-color: $darkGrayColor;
+    height: 100vh;
+
+    &__container {
+        display: flex;
+        gap: rem(0) rem(30);
+        height: 100vh;
+    }
+}
+
+.sidebar {
+    flex: 0 1 20%;
+    padding: rem(50) rem(15) rem(50) rem(0);
+    border-right: rem(1) solid $whiteOpacityColor;
+
+    &__figure {
+        padding: rem(5);
+        border: rem(1) solid $whiteOpacityColor;
+        border-radius: rem(3);
+    }
+
+    &__quote {
+        padding: rem(20) rem(10);
+        background-color: $whiteOpacityColor;
+        border-radius: rem(3);
+
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__figcaption {
+        text-align: right;
+        padding-right: rem(20);
+    }
+}
+
+.main {
+    flex: 1 0 80%;
+    @extend %display-flex-column;
+    justify-content: center;
+    padding: rem(50) rem(0);
+
+    &__table {
+        width: 100%;
+        color: $whiteColor;
+        background-color: $whiteOpacityColor;
+        border: rem(2) solid $lightGrayColor;
+        border-collapse: collapse;
+
+        & td,
+        & th {
+            padding: rem(5);
+            border: rem(2) solid $lightGrayColor;
+        }
+
+        & tfoot {
+            text-align: center;
+        }
+    }
+}
