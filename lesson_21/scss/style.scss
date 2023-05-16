@@ -91,7 +91,6 @@ body {
 
 .menu {
     @media (max-width: em(767.98)) {
-
         &__body {
             position: fixed;
             inset: 0 auto auto -100%;
@@ -99,6 +98,7 @@ body {
             height: 100%;
             padding: rem(70) 0 0 rem(20);
             background-color: $darkGrayColor;
+            opacity: 0;
             overflow: auto;
             transition: inset 0.3s;
             z-index: 1;
@@ -215,7 +215,7 @@ body {
             padding-top: rem(40);
             visibility: hidden;
             opacity: 0;
-            transition: all 0.3s;
+            transition: inset 0.3s, opacity 0.3s;
             pointer-events: none;
             z-index: 10;
         }

@@ -136,6 +136,7 @@ button {
 }
 .menu-open .menu__body {
   inset: 0 auto auto 0;
+  opacity: 1;
 }
 .menu-open .menu__body::before {
   inset: 0 auto auto 0;
@@ -520,6 +521,7 @@ body .wrapper main:not(:last-child) {
     height: 100%;
     padding: 4.375rem 0 0 1.25rem;
     background-color: #212529;
+    opacity: 0;
     overflow: auto;
     -webkit-transition: inset 0.3s;
     -o-transition: inset 0.3s;
@@ -635,9 +637,9 @@ body .wrapper main:not(:last-child) {
     padding-top: 2.5rem;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+    -webkit-transition: inset 0.3s, opacity 0.3s;
+    -o-transition: inset 0.3s, opacity 0.3s;
+    transition: inset 0.3s, opacity 0.3s;
     pointer-events: none;
     z-index: 10;
   }
